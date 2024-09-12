@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Cart</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div id="success-dialog" class="dialog hidden success-dialog">
+                <div class="dialog-content">
+                    <p id="success-message"></p>
+                </div>
+            </div>
+            <div id="error-dialog" class="dialog hidden error-dialog">
+                <div class="dialog-content">
+                    <p id="error-message"></p>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <a href="home.html">
+                <img src="../images/Nike_logo.png" alt="">
+            </a>
+            <div class="nav">
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="home.html" id="home-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" id="about-link">About</a>
+                        </li>
+                        <li>
+                            <a href="bill.html" id="bills-link">Bills</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="cart.html" class="icon-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-quantity" class="cart-quantity">0</span>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div id="list-cart">
+                <table class="table-cart">
+                    <thead id="thead">
+                        <tr>
+                            <th style="position: absolute;">Product Name</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Total</th>
+                            <th>Clear Cart</th>
+                        </tr>
+                    </thead>
+                    <tbody id="item-cart">
+
+                    </tbody>
+                </table>
+                <div class="btn-cart">
+                    <a href="home.html" class="back"><i class="fa-solid fa-arrow-left"></i> Bach to shopping</a>
+                </div>
+            </div>
+            <div id="buy-modal">
+                <form class="buy-form">
+                    <h3>Thông tin người mua hàng</h3>
+                    <i id="x-btn" class="fa-solid fa-xmark close-icon"></i>
+                    <hr>
+                    <div>
+                        <label for="">Họ và Tên<span style="color: red;">*</span></label>
+                        <div class="name-form">
+                            <div class="first-name">
+                                <input type="text" id="first-name" placeholder="Họ">
+                                <small class="error" id="first-name-error"></small>
+                            </div>
+                            <div class="last-name">
+                                <input type="text" id="last-name" placeholder="Tên">
+                                <small class="error" id="last-name-error"></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email">
+                        <label for="">Email<span style="color: red;">*</span></label>
+                        <div>
+                            <input type="email" placeholder="Email" id="email">
+                            <small class="error" id="email-error"></small>
+                        </div>
+                    </div>
+                    <div class="sdt">
+                        <label for="">Số điện thoại<span style="color: red;">*</span></label>
+                        <div>
+                            <input type="text" placeholder="Số điện thoại" id="phone">
+                            <small class="error" id="phone-error"></small>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="">Địa chỉ<span style="color: red;">*</span></label>
+                        <div class="address">
+                            <div class="select">
+                                <div>
+                                    <select id="city">
+                                        <option value="">--Chọn Tỉnh/ Thành Phố--</option>
+                                    </select>
+                                    <small class="error" id="city-error"></small>
+                                </div>
+                                <div>
+                                    <select id="district" disabled>
+                                        <option value="">--Chọn Huyện/ Quận--</option>
+                                    </select>
+                                    <small class="error" id="district-error"></small>
+                                </div>
+
+                                <div>
+                                    <select id="ward" disabled>
+                                        <option value="">--Chọn Phường/ Xã--</option>
+                                    </select>
+                                    <small class="error" id="ward-error"></small>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Số nhà" id="home-number">
+                                <small class="error" id="home-number-error"></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="">Lời nhắn</label>
+                        <div>
+                            <textarea rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="btn-form">
+                        <button id="x-btn" class="cancel-btn">Hủy</button>
+                        <button type="submit" id="confirm-btn">Xác nhận</button>
+                    </div>
+                </form>
+            </div>
+
+        </main>
+    </div>
+    <script type="module" src="../js/Cart/cart.js"></script>
+    <script type="module" src="../js/Form/form.js"></script>
+    <script src="../js/Utils/activeMenu.js"></script>
+
+</body>
+</html>
